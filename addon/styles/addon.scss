@@ -1,0 +1,25 @@
+@import 'variables';
+
+.offscreen-nav {
+  &.off {
+    left: -$nav-width;
+  }
+  &.on {
+    left: 0;
+  }
+
+  .offscreen-nav-toggler {
+    background: transparent;
+    position: absolute;
+    right: -$nav-toggler-width;
+    top: 0;
+    height: 100%;
+    width: $nav-toggler-width;
+  }
+
+  transition: $nav-transition-speed;
+  width: $nav-width;
+  position: absolute;
+  height: 100%;
+  background: $nav-background;
+}
