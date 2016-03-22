@@ -1,8 +1,24 @@
 # Ember-cli-offscreen-nav
 
-This README outlines the details of collaborating on this Ember addon.
+Lets you have a menu that comes in from left and lets you hide and show it via a panning action.
 
 ## Installation
+
+```
+ember install ember-cli-offscreen-nav
+```
+
+### Usage:
+``` hbs
+{{#offscreen-nav}}
+  some content
+{{/offscreen-nav}}
+...
+reset of the page
+```
+
+
+## Development
 
 * `git clone` this repository
 * `npm install`

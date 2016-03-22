@@ -6,7 +6,7 @@ export default Ember.Component.extend(RecognizerMixin, {
   recognizers: 'pan',
   classNames: 'offscreen-nav',
   classNameBindings: 'shown:on:off',
-  shown: true,
+  shown: false,
   layout,
   transform: { left: 0 },
 
