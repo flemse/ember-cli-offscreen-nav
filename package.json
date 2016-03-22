@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-offscreen-nav",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Addon to create classic mobile offscreen navigation menu",
   "directories": {
     "doc": "doc",
     "test": "tests"
