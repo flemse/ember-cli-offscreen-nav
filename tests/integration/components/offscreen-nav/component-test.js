@@ -6,12 +6,6 @@ moduleForComponent('offscreen-nav', 'Integration | Component | offscreen nav', {
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{offscreen-nav}}`);
-
-  assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
@@ -21,4 +15,25 @@ test('it renders', function(assert) {
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
+});
+
+test('it reacts to pan events', function(assert) {
+
+  // Template block usage:
+  this.render(hbs`
+    {{#offscreen-nav}}
+      template block text
+    {{/offscreen-nav}}
+  `);
+
+  let nav = this.$('.offscreen-nav');
+  assert.equal(nav.is('.off'), true);
+
+  nav.trigger('panright');
+
+  assert.equal(nav.is('.on'), true);
+
+  nav.trigger('panleft');
+
+  assert.equal(nav.is('.off'), true);
 });
