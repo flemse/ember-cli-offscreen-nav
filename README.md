@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/flemse/ember-cli-offscreen-nav.svg?branch=master)](https://travis-ci.org/flemse/ember-cli-offscreen-nav)
 
+[![Code Climate](https://codeclimate.com/github/flemse/ember-cli-offscreen-nav/badges/gpa.svg)](https://codeclimate.com/github/flemse/ember-cli-offscreen-nav)
+
+[![Test Coverage](https://codeclimate.com/github/flemse/ember-cli-offscreen-nav/badges/coverage.svg)](https://codeclimate.com/github/flemse/ember-cli-offscreen-nav/coverage)
+
 Lets you have a menu that comes in from left and lets you hide and show it via a panning action.
 
 ## Installation
