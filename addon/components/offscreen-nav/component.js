@@ -8,21 +8,29 @@ export default Ember.Component.extend(RecognizerMixin, {
   classNameBindings: 'shown:on:off',
   shown: true,
   layout,
+  transform: { left: 0 },
 
   panLeft(ev) { this.set('shown', false); },
   panRight(ev) { this.set('shown', true); },
-  panStart(e) {
-    this.startX = Math.round((window.offsetWidth - this.$().offsetWidth) / 2);
+  panStart(ev) {
   },
-  panMove(e) {
-    this._trigger(e);
+  panMove(ev) {
+    this.updateTransform(ev);
+    Ember.run.throttle(this, this.doUpdateStyle, 50);
   },
   panEnd(e) {
-    this.$().prop('style').removeProperty('left');
+    this.resetTransform();
   },
-  _trigger(ev) {
-    let deltaX = ev.originalEvent.gesture.deltaX;
-    this.$().css('left', deltaX);
-    console.log(ev.originalEvent.gesture.deltaX);
+  doUpdateStyle() {
+    this.$().css(this.transform);
+  },
+  updateTransform(ev) {
+    let center = ev.originalEvent.gesture.center;
+    let width = this.$().width();
+    this.transform.left = center.x - width;
+  },
+  resetTransform() {
+    this.transform.left = 0;
+    this.$().prop('style').removeProperty('left');
   }
 });
