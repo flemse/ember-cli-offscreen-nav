@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/flemse/ember-cli-offscreen-nav.svg?branch=master)](https://travis-ci.org/flemse/ember-cli-offscreen-nav)
+
 # Ember-cli-offscreen-nav
 
 Lets you have a menu that comes in from left and lets you hide and show it via a panning action.
