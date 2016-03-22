@@ -3,17 +3,16 @@ import RecognizerMixin from 'ember-gestures/mixins/recognizers';
 import layout from './template';
 
 export default Ember.Component.extend(RecognizerMixin, {
+  service: Ember.inject.service('offscreen-nav'),
   recognizers: 'pan',
   classNames: 'offscreen-nav',
   classNameBindings: 'shown:on:off',
-  shown: false,
+  shown: Ember.computed.alias('service.shown'),
   layout,
   transform: { left: 0 },
 
-  panLeft(ev) { this.set('shown', false); },
-  panRight(ev) { this.set('shown', true); },
-  panStart(ev) {
-  },
+  panLeft(ev) { this.get('service').hide(); },
+  panRight(ev) { this.get('service').show(); },
   panMove(ev) {
     this.updateTransform(ev);
     Ember.run.throttle(this, this.doUpdateStyle, 50);

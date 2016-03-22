@@ -2,6 +2,9 @@
   this is some offscreen content
 {{/offscreen-nav}}
 <div id="main_page">
+  <button {{action 'toggleNav'}} style="float: right;">
+    {{if navShown "hide" "show"}} navbar
+  </button>
   <h2 id="title">Welcome to Ember</h2>
 
   {{outlet}}
