@@ -8,7 +8,7 @@ module.exports = {
 
   afterInstall: function() {
     var addonPackages = [
-      {name: 'ember-gestures', target: '1.0.0'}
+      { name: 'ember-gestures', target: '0.4.1' }
     ];
 
     return RSVP.all([
